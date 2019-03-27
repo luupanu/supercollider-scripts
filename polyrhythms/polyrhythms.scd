@@ -88,7 +88,7 @@
     ~poly
     create polyrhythms that are (by default) equidistantly panned to the stereo field
 
-    :param polys          an array of polyrhythms to play
+    :param polys          a number of a single rhythm or an array of polyrhythms to play
                           - e.g. #[5, 9] for a 5 against 9 polyrhythm
     :param instrument     the instrument to play
     :param amp            amount of amplitude
@@ -106,6 +106,8 @@
   */
   ~poly = { |polys = #[5, 9], instrument = (\default), amp = 0.1, sustain = 0.02, pan = nil, firstNoteMul = 1, f = ({ |root, i| root + (root/2 * i) })|
     var pbinds = Array(polys.size);
+
+    if (polys.isArray.not, { polys = [polys] });
 
     polys.do { |poly, i|
       var freq, freqs, panning;
@@ -242,20 +244,20 @@
   );
 
   ~polys = ~polys ++ ~poly.(
-    polys: #[9],
+    polys: 9,
     amp: 0.4,
     instrument: \kick,
   );
 
   ~polys = ~polys ++ ~poly.(
-    polys: #[5],
+    polys: 5,
     amp: 0.25,
     instrument: \snare,
     pan: 0.2,
   );
 
   ~polys = ~polys ++ ~poly.(
-    polys: #[17],
+    polys: 17,
     amp: 0.3,
     instrument: \hihat,
     pan: -0.4,
