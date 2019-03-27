@@ -172,7 +172,7 @@
 
   ~polys = ~poly.(
     polys: #[19, 20, 21, 22, 23, 24, 25],
-    amp: 0.2,
+    amp: 0.23,
     instrument: \saw,
     firstNoteMul: ~irat.(12),
     f: { |root, i| root + (1 * i) },
@@ -214,7 +214,7 @@
 
   ~polys = ~poly.(
     polys: #[1, 9, 2, 8, 3, 7, 4, 6, 5],
-    amp: 0.05,
+    amp: 0.08,
     instrument: \sin,
     firstNoteMul: ~irat.(9),
     f: { |root, i| 100 + (100/3 * i) },
