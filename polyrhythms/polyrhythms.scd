@@ -22,8 +22,8 @@
   SynthDef(\sin, { |out = 0, freq = 440, amp = 0.1, pan = 0, sustain = 1|
     var z, env;
 
-    env = EnvGen.kr(Env([0, amp, 0], [0.01, sustain*8]), doneAction: 2);
-    z = SinOsc.ar(freq) * EnvGen.kr(Env([0, 1, 0], [0.01, sustain*8]), doneAction: 2);
+    env = Env([0, amp, 0], [0.01, sustain*8]).kr(doneAction: 2);
+    z = SinOsc.ar(freq, mul: env);
 
     OffsetOut.ar(out, Pan2.ar(z, pan, amp))
   }).add;
@@ -31,8 +31,8 @@
   SynthDef(\saw, { |out = 0, freq = 440, amp = 0.1, pan = 0, sustain = 1|
     var z, env, lpf;
 
-    env = EnvGen.kr(Env([0, amp, 0], [0.01, sustain*8]), doneAction: 2);
-    z = BlitB3Saw.ar(freq) * env;
+    env = Env([0, amp, 0], [0.01, sustain*8]).kr(doneAction: 2);
+    z = BlitB3Saw.ar(freq, mul: env);
     lpf = LPF.ar(z, 2000);
 
     OffsetOut.ar(out, Pan2.ar(lpf, pan, amp))
@@ -153,6 +153,7 @@
 
   ~polys = ~poly.(
     polys: #[5, 9, 2],
+    amp: 0.3,
     instrument: \sin,
     firstNoteMul: ~irat.(12),
     f: { |root, i| root + (root/1 * i) },
@@ -195,7 +196,7 @@
   ~polys = ~poly.(
     polys: #[3, 9, 7, 11, 4, 2.5, 1.1],
     instrument: \saw,
-    amp: 0.25,
+    amp: 0.3,
     sustain: 0.1,
     firstNoteMul: ~irat.(0),
     f: { |root, i| 100 + (100/3 * i) },
@@ -215,7 +216,7 @@
 
   ~polys = ~poly.(
     polys: #[1, 9, 2, 8, 3, 7, 4, 6, 5],
-    amp: 0.08,
+    amp: 0.3,
     instrument: \sin,
     firstNoteMul: ~irat.(9),
     f: { |root, i| 100 + (100/3 * i) },
@@ -238,7 +239,7 @@
 
   ~polys = ~polys ++ ~poly.(
     polys: #[1, 9, 2, 8, 5],
-    amp: 0.05,
+    amp: 0.25,
     instrument: \sin,
     firstNoteMul: ~irat.(-12),
     f: { |root, i| root + (root/1 * i) },
@@ -266,7 +267,7 @@
 
   // ~polys = ~polys ++ ~poly.(
   //   polys: 19,
-  //   amp: 0.02,
+  //   amp: 0.2,
   //   pan: -0.7,
   //   instrument: \sin,
   //   f: 550,
@@ -274,7 +275,7 @@
 
   // ~polys = ~polys ++ ~poly.(
   //   polys: 18,
-  //   amp: 0.016,
+  //   amp: 0.16,
   //   pan: 0.7,
   //   instrument: \sin,
   //   f: 616,
@@ -282,7 +283,7 @@
 
   // ~polys = ~polys ++ ~poly.(
   //   polys: 21,
-  //   amp: 0.012,
+  //   amp: 0.12,
   //   pan: 0.3,
   //   instrument: \sin,
   //   f: 825,
@@ -290,7 +291,7 @@
 
   // ~polys = ~polys ++ ~poly.(
   //   polys: 2.5,
-  //   amp: 0.015,
+  //   amp: 0.15,
   //   pan: -0.8,
   //   instrument: \sin,
   //   f: 1100,
@@ -298,7 +299,7 @@
 
   // ~polys = ~polys ++ ~poly.(
   //   polys: 1.1,
-  //   amp: 0.005,
+  //   amp: 0.05,
   //   pan: 0.8,
   //   instrument: \sin,
   //   f: #[1237.5, 1443.75, 1650],
