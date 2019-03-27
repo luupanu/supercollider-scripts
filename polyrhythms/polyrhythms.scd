@@ -153,7 +153,7 @@
 
   ~polys = ~poly.(
     polys: #[5, 9, 2],
-    amp: 0.3,
+    amp: 0.35,
     instrument: \sin,
     firstNoteMul: ~irat.(12),
     f: { |root, i| root + (root/1 * i) },
