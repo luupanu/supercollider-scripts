@@ -186,7 +186,7 @@
 
 // example 3
 // join only after one bar (quant: [0, i])
-// can even give float numbers to sync over two or more bars
+// you can give float numbers to polys to not be in sync all the time
 // try adding for example [8.3, 0.7, 1.8] to the array of polys...
 (
   TempoClock.tempo = 100/4/60;
@@ -208,7 +208,7 @@
 
 // example 4
 // alternating patterns are fun (small number, big number, small number...)
-// small phase differences to create even more rhythmic variation (quant: [0, i*0.01])
+// small phase differences create even more rhythmic variation (quant: [0, i*0.01])
 (
   TempoClock.tempo = 40/4/60;
 
