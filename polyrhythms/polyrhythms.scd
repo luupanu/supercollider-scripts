@@ -149,7 +149,7 @@
 // simple sine instrument with 5 over 9 over 2 pattern
 // first note of the bar is an octave above the rest
 (
-  TempoClock.tempo = 40/4/60;
+  TempoClock.tempo = 90/9/60; // read: 90 BPM in 9/4 meter
 
   ~polys = ~poly.(
     polys: #[5, 9, 2],
@@ -169,7 +169,7 @@
 // try slowing down the tempo or changing the instrument to hihat
 // or use e.g. [19, 20.14, 21.29, 22.43, 23.57, 24.71, 25.86] to desync over time
 (
-  TempoClock.tempo = 100/4/60;
+  TempoClock.tempo = 75/3/60; // read: 75 BPM in 3/4 meter
 
   ~polys = ~poly.(
     polys: #[19, 20, 21, 22, 23, 24, 25],
@@ -190,7 +190,7 @@
 // you can give float numbers to polys to not be in sync all the time
 // try adding for example [8.3, 0.7, 1.8] to the array of polys...
 (
-  TempoClock.tempo = 100/4/60;
+  TempoClock.tempo = 75/3/60; // read: 75 BPM in 3/4 meter
 
   ~polys = ~poly.(
     polys: #[3, 9, 7, 11, 4, 2.5, 1.1],
@@ -211,7 +211,7 @@
 // alternating patterns are fun (small number, big number, small number...)
 // small phase differences create even more rhythmic variation (quant: [0, i*0.01])
 (
-  TempoClock.tempo = 40/4/60;
+  TempoClock.tempo = 90/9/60; // read: 90 BPM in 9/4 meter
 
   ~polys = ~poly.(
     polys: #[1, 9, 2, 8, 3, 7, 4, 6, 5],
@@ -232,7 +232,7 @@
 // you can also give explicit panning
 // try uncommenting the instruments below one at a time
 (
-  TempoClock.tempo = 50/4/60;
+  TempoClock.tempo = 112.5/9/60;  // read: 112.5 BPM in 9/4 meter
 
   ~polys = [];
 
