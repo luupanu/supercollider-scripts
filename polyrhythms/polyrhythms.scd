@@ -167,6 +167,7 @@
 // example 2
 // very close and quick polyrhythmic patterns
 // try slowing down the tempo or changing the instrument to hihat
+// or use e.g. [19, 20.14, 21.29, 22.43, 23.57, 24.71, 25.86] to desync over time
 (
   TempoClock.tempo = 100/4/60;
 
