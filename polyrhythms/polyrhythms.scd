@@ -264,7 +264,7 @@
   );
 
   // ~polys = ~polys ++ ~poly.(
-  //   polys: #[19],
+  //   polys: 19,
   //   amp: 0.02,
   //   pan: -0.7,
   //   instrument: \sin,
@@ -272,7 +272,7 @@
   // );
 
   // ~polys = ~polys ++ ~poly.(
-  //   polys: #[18],
+  //   polys: 18,
   //   amp: 0.016,
   //   pan: 0.7,
   //   instrument: \sin,
@@ -280,7 +280,7 @@
   // );
 
   // ~polys = ~polys ++ ~poly.(
-  //   polys: #[21],
+  //   polys: 21,
   //   amp: 0.012,
   //   pan: 0.3,
   //   instrument: \sin,
@@ -288,7 +288,7 @@
   // );
 
   // ~polys = ~polys ++ ~poly.(
-  //   polys: #[2.5],
+  //   polys: 2.5,
   //   amp: 0.015,
   //   pan: -0.8,
   //   instrument: \sin,
@@ -296,7 +296,7 @@
   // );
 
   // ~polys = ~polys ++ ~poly.(
-  //   polys: #[1.1],
+  //   polys: 1.1,
   //   amp: 0.005,
   //   pan: 0.8,
   //   instrument: \sin,
